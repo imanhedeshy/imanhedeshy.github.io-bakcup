@@ -1,0 +1,78 @@
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f8f9fa; // light bluish grey
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journal {
+  max-width: 90%;
+  width: 100%;
+  margin: 2% 0;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: #dfe4ea; // light blue
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.07);
+
+  @media (min-width: 600px) {
+    max-width: 75%;
+  }
+
+  @media (min-width: 900px) {
+    max-width: 50%;
+  }
+
+  &__entry {
+    border-radius: 5px;
+    margin: 2% 0;
+    padding: 2%;
+    background-color: #f8f9fa; // light bluish grey
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.1);
+
+    &__title {
+      font-size: 1.2em;
+      color: #2f3542; // dark bluish grey
+      margin-bottom: 0.5em;
+    }
+
+    &__author {
+      font-size: 0.9em;
+      color: #57606f; // medium bluish grey
+      margin-bottom: 1em;
+    }
+
+    &__content {
+      font-size: 1em;
+      color: #2f3542; // dark bluish grey
+      margin-bottom: 1em;
+    }
+
+    &__likes {
+      font-size: 0.9em;
+      color: #57606f; // medium bluish grey
+      margin-bottom: 1em;
+    }
+
+    &__like-button {
+      background-color: #a4b0be; // bluish grey
+      border: none;
+      border-radius: 5px;
+      color: #ffffff; // white
+      cursor: pointer;
+      font-size: 0.9em;
+      padding: 0.5em;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #747d8c; // darker bluish grey
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+  }
+}
