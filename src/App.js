@@ -1,5 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function App() {
   return (
@@ -20,8 +29,8 @@ function App() {
     //   </header>
     // </div>
     <>
-    <a href="../iman-hedeshy-solar-system/index.html">SOLAR SYSTEM</a>
-    <a href="../journal/index.html">JOURNAL</a>
+    <Link to="../iman-hedeshy-solar-system/index.html">SOLAR SYSTEM</Link>
+    <Link to="../journal/index.html">JOURNAL</Link>
     </>
   );
 }
