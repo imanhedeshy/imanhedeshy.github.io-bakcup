@@ -2,9 +2,10 @@
   display: flex;
   text-align: center;
   justify-content: space-around;
-}
-.App > * {
-  margin: 3rem auto;
+
+  & > * {
+    margin: 3rem auto;
+  }
 }
 
 .App-logo {
@@ -17,6 +18,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -39,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}/*# sourceMappingURL=App.css.map */
+}

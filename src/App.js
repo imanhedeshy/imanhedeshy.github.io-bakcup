@@ -28,10 +28,10 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <>
+    <main className="App">
     <Link to="../iman-hedeshy-solar-system/index.html">SOLAR SYSTEM</Link>
     <Link to="../journal/index.html">JOURNAL</Link>
-    </>
+    </main>
   );
 }
 
