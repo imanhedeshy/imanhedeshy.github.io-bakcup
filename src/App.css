@@ -1,42 +1,236 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Futura&display=swap");
+* {
+  font-family: Futura, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #222;
+  overflow: hidden;
+  height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#solar-system {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 8%;
+  top: 1%;
+  filter: drop-shadow(0px 0px 2px #fff);
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #ffffff;
+  color: #000000;
   text-align: center;
-  justify-content: space-around;
-}
-.App > * {
-  margin: 3rem auto;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -50px;
+  width: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
+.celestial-body {
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.celestial-body::after {
+  content: attr(id);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
   pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+  transition: opacity 0.2s;
+  font-size: 12px;
+  text-transform: capitalize;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.celestial-body:hover::after {
+  opacity: 1;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+#sun {
+  background-image: url("../components/SolarSystem/assets/sun.svg");
+  width: 6rem;
+  height: 6rem;
+  transform: translate(-50%, -50%);
+}
+
+#mercury {
+  background-image: url("../components/SolarSystem/assets/mercury.svg");
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+#venus {
+  background-image: url("../components/SolarSystem/assets/venus.svg");
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+#earth {
+  background-image: url("../components/SolarSystem/assets/earth.svg");
+  width: 2rem;
+  height: 2rem;
+}
+
+#moon {
+  background-image: url("../components/SolarSystem/assets/moon.svg");
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#mars {
+  background-image: url("../components/SolarSystem/assets/mars.svg");
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+#jupiter {
+  background-image: url("../components/SolarSystem/assets/jupiter.svg");
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+#saturn {
+  background-image: url("../components/SolarSystem/assets/saturn.svg");
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+#uranus {
+  background-image: url("../components/SolarSystem/assets/uranus.svg");
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+#neptune {
+  background-image: url("../components/SolarSystem/assets/neptune.svg");
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+#phobos {
+  background-image: url("../components/SolarSystem/assets/phobos.svg");
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#deimos {
+  background-image: url("../components/SolarSystem/assets/deimos.svg");
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#io {
+  background-image: url("../components/SolarSystem/assets/io.svg");
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pluto {
+  background-image: url("../components/SolarSystem/assets/pluto.svg");
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.planet {
+  transform: translate(-50%, -50%);
+}
+
+header,
+footer {
+  background-color: #333;
+  color: #fff;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+header {
+  position: sticky;
+  padding: 1rem;
+}
+
+footer {
+  padding: 0.5rem;
+  font-size: small;
+}
+
+#controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+  color: #000; /* black text */
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border: none; /* remove the border */
+  border-radius: 4px; /* Add rounded corners */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Arial, sans-serif; /* Use a common font */
+}
+
+#controls label {
+  font-weight: bold; /* Make labels bold */
+}
+
+#controls input {
+  width: 100px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #795a33;
+  border-radius: 4px; /* Add rounded corners to input fields */
+  outline: none;
+}
+
+#controls button {
+  background-color: #c5b29a;
+  color: #504133;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px; /* Add rounded corners to the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+#controls button:hover {
+  background-color: #635337; /* Darker shade on hover */
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }/*# sourceMappingURL=App.css.map */
